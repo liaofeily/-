@@ -1,0 +1,17 @@
+{
+  "status": 0,
+  "message": [
+    {
+      "url": "static/images/cbd.jpg"
+    },
+    {
+      "url": "static/images/muwu.jpg"
+    },
+    {
+      "url": "static/images/shuijiao.jpg"
+    },
+    {
+      "url": "static/images/yuantiao.jpg"
+    }
+  ]
+}

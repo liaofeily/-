@@ -47,7 +47,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 50px;
   overflow-x: hidden;
 }
 .v-enter {
@@ -65,5 +66,9 @@ export default {
 .v-leave-active {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+.mui-bar {
+  box-shadow: none;
+  border-top: .3px solid rgba(0,0,0,.85)
 }
 </style>

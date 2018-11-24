@@ -3,9 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import './lib/mui/css/mui.css'
+import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 import VueResource from 'vue-resource'
+import moment from 'moment'
 // import axios from 'axios'
 
 import { Header, Button, Swipe, SwipeItem } from 'mint-ui'
@@ -17,6 +18,12 @@ Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
 
 Vue.use(VueResource)
+
+
+
+Vue.filter('dataFormat', function (dataStr, patten = 'YYYY-MM-DD HH:mm:ss') {
+	return moment(dataStr).format(patten)
+})
 
 // Vue.prototype.$http = axios
 
