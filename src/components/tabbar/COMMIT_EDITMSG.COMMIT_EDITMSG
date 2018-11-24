@@ -1,0 +1,660 @@
+我的项目第二次保存
+
+# --------------
+# Please enter the commit message for your changes. Everything below
+# this paragraph is ignored, and an empty message aborts the commit.
+# Just close the window to accept your message.
+diff --git a/.eslintrc.js b/.eslintrc.js
+index 22fdce8..113f3e1 100644
+--- a/.eslintrc.js
++++ b/.eslintrc.js
+@@ -24,6 +24,9 @@ module.exports = {
+     // allow async-await
+     'generator-star-spacing': 'off',
+     // allow debugger during development
+-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
++    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
++    'no-tabs': 'off',
++    "no-mixed-spaces-and-tabs": 'off',
++    "indent": 'off'
+   }
+ }
+diff --git a/baobao b/baobao
+new file mode 160000
+index 0000000..d292f09
+--- /dev/null
++++ b/baobao
+@@ -0,0 +1 @@
++Subproject commit d292f09e0069283797e2c780829435d7378b3ca4
+diff --git a/src/App.vue b/src/App.vue
+index 1b2fa49..c6472c9 100644
+--- a/src/App.vue
++++ b/src/App.vue
+@@ -12,22 +12,22 @@
+     <router-view/>
+     <!-- 底部 Tabbar 区域 -->
+     <nav class="mui-bar mui-bar-tab">
+-      <a class="mui-tab-item mui-active" href="#tabbar">
++      <router-link class="mui-tab-item" to="/home">
+         <span class="mui-icon mui-icon-home"></span>
+         <span class="mui-tab-label">首页</span>
+-      </a>
+-      <a class="mui-tab-item" href="#tabbar-with-chat">
+-        <span class="mui-icon mui-icon-email"></span>
+-        <span class="mui-tab-label">消息</span>
+-      </a>
+-      <a class="mui-tab-item" href="#tabbar-with-contact">
++      </router-link>
++      <router-link class="mui-tab-item" to="/member">
+         <span class="mui-icon mui-icon-contact"></span>
+-        <span class="mui-tab-label">通讯录</span>
+-      </a>
+-      <a class="mui-tab-item" href="#tabbar-with-map">
+-        <span class="mui-icon mui-icon-gear"></span>
+-        <span class="mui-tab-label">设置</span>
+-      </a>
++        <span class="mui-tab-label">会员</span>
++      </router-link>
++      <router-link class="mui-tab-item" to="/shopcar">
++        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
++        <span class="mui-tab-label">购物车</span>
++      </router-link>
++      <router-link class="mui-tab-item" to="/search">
++        <span class="mui-icon mui-icon-search"></span>
++        <span class="mui-tab-label">搜索</span>
++      </router-link>
+     </nav>
+   </div>
+ </template>
+diff --git a/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG b/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG
+new file mode 100644
+index 0000000..e38eee3
+--- /dev/null
++++ b/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG
+@@ -0,0 +1,323 @@
++我的项目第二次保存
++
++# --------------
++# Please enter the commit message for your changes. Everything below
++# this paragraph is ignored, and an empty message aborts the commit.
++# Just close the window to accept your message.
++diff --git a/.eslintrc.js b/.eslintrc.js
++index 22fdce8..113f3e1 100644
++--- a/.eslintrc.js
+++++ b/.eslintrc.js
++@@ -24,6 +24,9 @@ module.exports = {
++     // allow async-await
++     'generator-star-spacing': 'off',
++     // allow debugger during development
++-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+++    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+++    'no-tabs': 'off',
+++    "no-mixed-spaces-and-tabs": 'off',
+++    "indent": 'off'
++   }
++ }
++diff --git a/src/App.vue b/src/App.vue
++index 1b2fa49..c6472c9 100644
++--- a/src/App.vue
+++++ b/src/App.vue
++@@ -12,22 +12,22 @@
++     <router-view/>
++     <!-- 底部 Tabbar 区域 -->
++     <nav class="mui-bar mui-bar-tab">
++-      <a class="mui-tab-item mui-active" href="#tabbar">
+++      <router-link class="mui-tab-item" to="/home">
++         <span class="mui-icon mui-icon-home"></span>
++         <span class="mui-tab-label">首页</span>
++-      </a>
++-      <a class="mui-tab-item" href="#tabbar-with-chat">
++-        <span class="mui-icon mui-icon-email"></span>
++-        <span class="mui-tab-label">消息</span>
++-      </a>
++-      <a class="mui-tab-item" href="#tabbar-with-contact">
+++      </router-link>
+++      <router-link class="mui-tab-item" to="/member">
++         <span class="mui-icon mui-icon-contact"></span>
++-        <span class="mui-tab-label">通讯录</span>
++-      </a>
++-      <a class="mui-tab-item" href="#tabbar-with-map">
++-        <span class="mui-icon mui-icon-gear"></span>
++-        <span class="mui-tab-label">设置</span>
++-      </a>
+++        <span class="mui-tab-label">会员</span>
+++      </router-link>
+++      <router-link class="mui-tab-item" to="/shopcar">
+++        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+++        <span class="mui-tab-label">购物车</span>
+++      </router-link>
+++      <router-link class="mui-tab-item" to="/search">
+++        <span class="mui-icon mui-icon-search"></span>
+++        <span class="mui-tab-label">搜索</span>
+++      </router-link>
++     </nav>
++   </div>
++ </template>
++diff --git a/src/components/tabbar/HomeContainer.vue b/src/components/tabbar/HomeContainer.vue
++new file mode 100644
++index 0000000..f4102fb
++--- /dev/null
+++++ b/src/components/tabbar/HomeContainer.vue
++@@ -0,0 +1,37 @@
+++<template>
+++  <div>
+++    <mt-swipe :auto="4000">
+++      <mt-swipe-item><img src="../../assets/logo.png" /></mt-swipe-item>
+++      <mt-swipe-item><img src="" /></mt-swipe-item>
+++      <mt-swipe-item><img src="" /></mt-swipe-item>
+++    </mt-swipe>
+++  </div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'HomeContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++.mint-swipe {
+++    height: 200px;
+++}
+++.mint-swipe-item:first-child {
+++    background-color: lightblue;
+++}
+++.mint-swipe-item:nth-child(2) {
+++    background-color: cyan;
+++}
+++.mint-swipe-item:nth-child(3) {
+++    background-color: yellow;
+++}
+++</style>
++diff --git a/src/components/tabbar/MemberContainer.vue b/src/components/tabbar/MemberContainer.vue
++new file mode 100644
++index 0000000..e3d11b0
++--- /dev/null
+++++ b/src/components/tabbar/MemberContainer.vue
++@@ -0,0 +1,21 @@
+++<template>
+++  <div>
+++    <h2>会员页面-宝宝</h2>
+++  </div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'MemberContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++</style>
++diff --git a/src/components/tabbar/SearchContainer.vue b/src/components/tabbar/SearchContainer.vue
++new file mode 100644
++index 0000000..bf3fd75
++--- /dev/null
+++++ b/src/components/tabbar/SearchContainer.vue
++@@ -0,0 +1,21 @@
+++<template>
+++	<div>
+++		<h2>搜索页面-宝宝</h2>
+++	</div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'SearchContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++</style>
++diff --git a/src/components/tabbar/ShopcarContainer.vue b/src/components/tabbar/ShopcarContainer.vue
++new file mode 100644
++index 0000000..3c44a6f
++--- /dev/null
+++++ b/src/components/tabbar/ShopcarContainer.vue
++@@ -0,0 +1,21 @@
+++<template>
+++	<div>
+++		<h2>购物车页面-宝宝</h2>
+++	</div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'ShopcarContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++</style>
++diff --git a/src/lib/mui/css/icons-extra.css b/src/lib/mui/css/icons-extra.css
++new file mode 100644
++index 0000000..94ea3e5
++--- /dev/null
+++++ b/src/lib/mui/css/icons-extra.css
++@@ -0,0 +1,63 @@
+++@font-face {
+++    font-family: MuiiconSpread;
+++    font-weight: normal;
+++    font-style: normal;
+++    src:  url('../fonts/mui-icons-extra.ttf') format('truetype'); /* iOS 4.1- */
+++}
+++.mui-icon-extra
+++{
+++    font-family: MuiiconSpread;
+++    font-size: 24px;
+++    font-weight: normal;
+++    font-style: normal;
+++    line-height: 1;
+++    display: inline-block;
+++    text-decoration: none;
+++    -webkit-font-smoothing: antialiased;
+++}
+++.mui-icon-extra-cold:before { content: "\e500"; }
+++.mui-icon-extra-share:before { content: "\e200"; }
+++.mui-icon-extra-class:before { content: "\e118"; }
+++.mui-icon-extra-custom:before { content: "\e117"; }
+++.mui-icon-extra-new:before { content: "\e103"; }
+++.mui-icon-extra-card:before { content: "\e104"; }
+++.mui-icon-extra-grech:before { content: "\e105"; }
+++.mui-icon-extra-trend:before { content: "\e106"; }
+++.mui-icon-extra-filter:before { content: "\e207"; }
+++.mui-icon-extra-holiday:before { content: "\e300"; }
+++.mui-icon-extra-cart:before { content: "\e107"; }
+++.mui-icon-extra-heart:before { content: "\e180"; }
+++.mui-icon-extra-computer:before { content: "\e600"; }
+++.mui-icon-extra-express:before { content: "\e108"; }
+++.mui-icon-extra-gift:before { content: "\e109"; }
+++.mui-icon-extra-gold:before { content: "\e102"; }
+++.mui-icon-extra-lamp:before { content: "\e601"; }
+++.mui-icon-extra-rank:before { content: "\e110"; }
+++.mui-icon-extra-notice:before { content: "\e111"; }
+++.mui-icon-extra-sweep:before { content: "\e202"; }
+++.mui-icon-extra-arrowleftcricle:before { content: "\e401"; }
+++.mui-icon-extra-dictionary:before { content: "\e602"; }
+++.mui-icon-extra-heart-filled:before { content: "\e119"; }
+++.mui-icon-extra-xiaoshuo:before { content: "\e607"; }
+++.mui-icon-extra-top:before { content: "\e403"; }
+++.mui-icon-extra-people:before { content: "\e203"; }
+++.mui-icon-extra-topic:before { content: "\e603"; }
+++.mui-icon-extra-hotel:before { content: "\e301"; }
+++.mui-icon-extra-like:before { content: "\e206"; }
+++.mui-icon-extra-regist:before { content: "\e201"; }
+++.mui-icon-extra-order:before { content: "\e113"; }
+++.mui-icon-extra-alipay:before { content: "\e114"; }
+++.mui-icon-extra-find:before { content: "\e400"; }
+++.mui-icon-extra-arrowrightcricle:before { content: "\e402"; }
+++.mui-icon-extra-calendar:before { content: "\e115"; }
+++.mui-icon-extra-prech:before { content: "\e116"; }
+++.mui-icon-extra-cate:before { content: "\e501"; }
+++.mui-icon-extra-comment:before { content: "\e209"; }
+++.mui-icon-extra-at:before { content: "\e208"; }
+++.mui-icon-extra-addpeople:before { content: "\e204"; }
+++.mui-icon-extra-peoples:before { content: "\e205"; }
+++.mui-icon-extra-calc:before { content: "\e101"; }
+++.mui-icon-extra-classroom:before { content: "\e604"; }
+++.mui-icon-extra-phone:before { content: "\e404"; }
+++.mui-icon-extra-university:before { content: "\e605"; }
+++.mui-icon-extra-outline:before { content: "\e606"; }
++diff --git a/src/lib/mui/fonts/mui-icons-extra.ttf b/src/lib/mui/fonts/mui-icons-extra.ttf
++new file mode 100644
++index 0000000..8b5c92d
++Binary files /dev/null and b/src/lib/mui/fonts/mui-icons-extra.ttf differ
++diff --git a/src/main.js b/src/main.js
++index df6279f..4c23ad7 100644
++--- a/src/main.js
+++++ b/src/main.js
++@@ -4,11 +4,15 @@ import Vue from 'vue'
++ import App from './App'
++ import router from './router'
++ import './lib/mui/css/mui.css'
++-import { Header, Button } from 'mint-ui'
+++import './lib/mui/css/icons-extra.css'
+++
+++import { Header, Button, Swipe, SwipeItem } from 'mint-ui'
++ // import resource from './resource'
++ // import store from './store'
++ Vue.component(Header.name, Header)
++ Vue.component(Button.name, Button)
+++Vue.component(Swipe.name, Swipe)
+++Vue.component(SwipeItem.name, SwipeItem)
++ 
++ Vue.config.productionTip = false
++ 
++diff --git a/src/router/index.js b/src/router/index.js
++index 5fa7f9d..010cd16 100644
++--- a/src/router/index.js
+++++ b/src/router/index.js
++@@ -1,6 +1,10 @@
++ import Vue from 'vue'
++ import Router from 'vue-router'
++ import HelloWorld from '@/components/HelloWorld'
+++import HomeContainer from '@/components/tabbar/HomeContainer'
+++import MemberContainer from '@/components/tabbar/MemberContainer'
+++import ShopcarContainer from '@/components/tabbar/ShopcarContainer'
+++import SearchContainer from '@/components/tabbar/SearchContainer'
++ 
++ Vue.use(Router)
++ 
++@@ -10,6 +14,27 @@ export default new Router({
++       path: '/',
++       name: 'HelloWorld',
++       component: HelloWorld
+++    },
+++    {
+++    	path: '/home',
+++			name: 'HomeContainer',
+++      component: HomeContainer
+++    },
+++    {
+++    	path: '/member',
+++    	name: '/MemberContainer',
+++      component: MemberContainer
+++    },
+++    {
+++    	path: '/shopcar',
+++      name: 'ShopcarContainer',
+++      component: ShopcarContainer
+++    },
+++    {
+++    	path: '/search',
+++			name: 'SearchContainer',
+++      component: SearchContainer
++     }
++-  ]
+++  ],
+++  linkActiveClass: 'mui-active'
++ })
+\ No newline at end of file
+diff --git a/src/components/tabbar/HomeContainer.vue b/src/components/tabbar/HomeContainer.vue
+new file mode 100644
+index 0000000..f4102fb
+--- /dev/null
++++ b/src/components/tabbar/HomeContainer.vue
+@@ -0,0 +1,37 @@
++<template>
++  <div>
++    <mt-swipe :auto="4000">
++      <mt-swipe-item><img src="../../assets/logo.png" /></mt-swipe-item>
++      <mt-swipe-item><img src="" /></mt-swipe-item>
++      <mt-swipe-item><img src="" /></mt-swipe-item>
++    </mt-swipe>
++  </div>
++</template>
++
++<script>
++export default {
++
++  name: 'HomeContainer',
++
++  data () {
++    return {
++
++    }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++.mint-swipe {
++    height: 200px;
++}
++.mint-swipe-item:first-child {
++    background-color: lightblue;
++}
++.mint-swipe-item:nth-child(2) {
++    background-color: cyan;
++}
++.mint-swipe-item:nth-child(3) {
++    background-color: yellow;
++}
++</style>
+diff --git a/src/components/tabbar/MemberContainer.vue b/src/components/tabbar/MemberContainer.vue
+new file mode 100644
+index 0000000..e3d11b0
+--- /dev/null
++++ b/src/components/tabbar/MemberContainer.vue
+@@ -0,0 +1,21 @@
++<template>
++  <div>
++    <h2>会员页面-宝宝</h2>
++  </div>
++</template>
++
++<script>
++export default {
++
++  name: 'MemberContainer',
++
++  data () {
++    return {
++
++    }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++</style>
+diff --git a/src/components/tabbar/SearchContainer.vue b/src/components/tabbar/SearchContainer.vue
+new file mode 100644
+index 0000000..bf3fd75
+--- /dev/null
++++ b/src/components/tabbar/SearchContainer.vue
+@@ -0,0 +1,21 @@
++<template>
++	<div>
++		<h2>搜索页面-宝宝</h2>
++	</div>
++</template>
++
++<script>
++export default {
++
++  name: 'SearchContainer',
++
++  data () {
++    return {
++
++    }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++</style>
+diff --git a/src/components/tabbar/ShopcarContainer.vue b/src/components/tabbar/ShopcarContainer.vue
+new file mode 100644
+index 0000000..3c44a6f
+--- /dev/null
++++ b/src/components/tabbar/ShopcarContainer.vue
+@@ -0,0 +1,21 @@
++<template>
++	<div>
++		<h2>购物车页面-宝宝</h2>
++	</div>
++</template>
++
++<script>
++export default {
++
++  name: 'ShopcarContainer',
++
++  data () {
++    return {
++
++    }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++</style>
+diff --git a/src/lib/mui/css/icons-extra.css b/src/lib/mui/css/icons-extra.css
+new file mode 100644
+index 0000000..94ea3e5
+--- /dev/null
++++ b/src/lib/mui/css/icons-extra.css
+@@ -0,0 +1,63 @@
++@font-face {
++    font-family: MuiiconSpread;
++    font-weight: normal;
++    font-style: normal;
++    src:  url('../fonts/mui-icons-extra.ttf') format('truetype'); /* iOS 4.1- */
++}
++.mui-icon-extra
++{
++    font-family: MuiiconSpread;
++    font-size: 24px;
++    font-weight: normal;
++    font-style: normal;
++    line-height: 1;
++    display: inline-block;
++    text-decoration: none;
++    -webkit-font-smoothing: antialiased;
++}
++.mui-icon-extra-cold:before { content: "\e500"; }
++.mui-icon-extra-share:before { content: "\e200"; }
++.mui-icon-extra-class:before { content: "\e118"; }
++.mui-icon-extra-custom:before { content: "\e117"; }
++.mui-icon-extra-new:before { content: "\e103"; }
++.mui-icon-extra-card:before { content: "\e104"; }
++.mui-icon-extra-grech:before { content: "\e105"; }
++.mui-icon-extra-trend:before { content: "\e106"; }
++.mui-icon-extra-filter:before { content: "\e207"; }
++.mui-icon-extra-holiday:before { content: "\e300"; }
++.mui-icon-extra-cart:before { content: "\e107"; }
++.mui-icon-extra-heart:before { content: "\e180"; }
++.mui-icon-extra-computer:before { content: "\e600"; }
++.mui-icon-extra-express:before { content: "\e108"; }
++.mui-icon-extra-gift:before { content: "\e109"; }
++.mui-icon-extra-gold:before { content: "\e102"; }
++.mui-icon-extra-lamp:before { content: "\e601"; }
++.mui-icon-extra-rank:before { content: "\e110"; }
++.mui-icon-extra-notice:before { content: "\e111"; }
++.mui-icon-extra-sweep:before { content: "\e202"; }
++.mui-icon-extra-arrowleftcricle:before { content: "\e401"; }
++.mui-icon-extra-dictionary:before { content: "\e602"; }
++.mui-icon-extra-heart-filled:before { content: "\e119"; }
++.mui-icon-extra-xiaoshuo:before { content: "\e607"; }
++.mui-icon-extra-top:before { content: "\e403"; }
++.mui-icon-extra-people:before { content: "\e203"; }
++.mui-icon-extra-topic:before { content: "\e603"; }
++.mui-icon-extra-hotel:before { content: "\e301"; }
++.mui-icon-extra-like:before { content: "\e206"; }
++.mui-icon-extra-regist:before { content: "\e201"; }
++.mui-icon-extra-order:before { content: "\e113"; }
++.mui-icon-extra-alipay:before { content: "\e114"; }
++.mui-icon-extra-find:before { content: "\e400"; }
++.mui-icon-extra-arrowrightcricle:before { content: "\e402"; }
++.mui-icon-extra-calendar:before { content: "\e115"; }
++.mui-icon-extra-prech:before { content: "\e116"; }
++.mui-icon-extra-cate:before { content: "\e501"; }
++.mui-icon-extra-comment:before { content: "\e209"; }
++.mui-icon-extra-at:before { content: "\e208"; }
++.mui-icon-extra-addpeople:before { content: "\e204"; }
++.mui-icon-extra-peoples:before { content: "\e205"; }
++.mui-icon-extra-calc:before { content: "\e101"; }
++.mui-icon-extra-classroom:before { content: "\e604"; }
++.mui-icon-extra-phone:before { content: "\e404"; }
++.mui-icon-extra-university:before { content: "\e605"; }
++.mui-icon-extra-outline:before { content: "\e606"; }
+diff --git a/src/lib/mui/fonts/mui-icons-extra.ttf b/src/lib/mui/fonts/mui-icons-extra.ttf
+new file mode 100644
+index 0000000..8b5c92d
+Binary files /dev/null and b/src/lib/mui/fonts/mui-icons-extra.ttf differ
+diff --git a/src/main.js b/src/main.js
+index df6279f..4c23ad7 100644
+--- a/src/main.js
++++ b/src/main.js
+@@ -4,11 +4,15 @@ import Vue from 'vue'
+ import App from './App'
+ import router from './router'
+ import './lib/mui/css/mui.css'
+-import { Header, Button } from 'mint-ui'
++import './lib/mui/css/icons-extra.css'
++
++import { Header, Button, Swipe, SwipeItem } from 'mint-ui'
+ // import resource from './resource'
+ // import store from './store'
+ Vue.component(Header.name, Header)
+ Vue.component(Button.name, Button)
++Vue.component(Swipe.name, Swipe)
++Vue.component(SwipeItem.name, SwipeItem)
+ 
+ Vue.config.productionTip = false
+ 
+diff --git a/src/router/index.js b/src/router/index.js
+index 5fa7f9d..010cd16 100644
+--- a/src/router/index.js
++++ b/src/router/index.js
+@@ -1,6 +1,10 @@
+ import Vue from 'vue'
+ import Router from 'vue-router'
+ import HelloWorld from '@/components/HelloWorld'
++import HomeContainer from '@/components/tabbar/HomeContainer'
++import MemberContainer from '@/components/tabbar/MemberContainer'
++import ShopcarContainer from '@/components/tabbar/ShopcarContainer'
++import SearchContainer from '@/components/tabbar/SearchContainer'
+ 
+ Vue.use(Router)
+ 
+@@ -10,6 +14,27 @@ export default new Router({
+       path: '/',
+       name: 'HelloWorld',
+       component: HelloWorld
++    },
++    {
++    	path: '/home',
++			name: 'HomeContainer',
++      component: HomeContainer
++    },
++    {
++    	path: '/member',
++    	name: '/MemberContainer',
++      component: MemberContainer
++    },
++    {
++    	path: '/shopcar',
++      name: 'ShopcarContainer',
++      component: ShopcarContainer
++    },
++    {
++    	path: '/search',
++			name: 'SearchContainer',
++      component: SearchContainer
+     }
+-  ]
++  ],
++  linkActiveClass: 'mui-active'
+ })

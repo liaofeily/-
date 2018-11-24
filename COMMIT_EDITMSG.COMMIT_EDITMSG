@@ -1,0 +1,1414 @@
+项目第二次保存
+
+# --------------
+# Please enter the commit message for your changes. Everything below
+# this paragraph is ignored, and an empty message aborts the commit.
+# Just close the window to accept your message.
+diff --git a/.eslintrc.js b/.eslintrc.js
+index 22fdce8..113f3e1 100644
+--- a/.eslintrc.js
++++ b/.eslintrc.js
+@@ -24,6 +24,9 @@ module.exports = {
+     // allow async-await
+     'generator-star-spacing': 'off',
+     // allow debugger during development
+-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
++    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
++    'no-tabs': 'off',
++    "no-mixed-spaces-and-tabs": 'off',
++    "indent": 'off'
+   }
+ }
+diff --git a/baobao b/baobao
+new file mode 160000
+index 0000000..d292f09
+--- /dev/null
++++ b/baobao
+@@ -0,0 +1 @@
++Subproject commit d292f09e0069283797e2c780829435d7378b3ca4
+diff --git a/index.html b/index.html
+index f68f028..9d06007 100644
+--- a/index.html
++++ b/index.html
+@@ -5,7 +5,7 @@
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+     <title>baobao</title>
+   </head>
+-  <body>
++  <body style="background-color: white;">
+     <div id="app"></div>
+     <!-- built files will be auto injected -->
+   </body>
+diff --git a/lunbotu.json b/lunbotu.json
+new file mode 100644
+index 0000000..11c0c29
+--- /dev/null
++++ b/lunbotu.json
+@@ -0,0 +1,89 @@
++{
++				"status": 0,
++        "keys": "",
++        "light": "已完成",
++        "deep": "#41b883",
++        "flagRange": 0,
++        "flag": 1,
++        "showopa": "1",
++        "hideopa": "0.1",
++        "currentSpan": "",
++        "SnNum": 20,
++        "listItems": [
++            {
++                "lable": "",
++                "box": [
++                    {
++                        "tag": "",
++                        "Sn": [
++                            {
++                                "name": "",
++                                "status": "",
++                                "duty": ""
++                            },
++                            {
++                                "name": "",
++                                "status": "",
++                                "duty": ""
++                            }
++                        ]
++                    },
++                    {
++                        "tag": "",
++                        "Sn": [
++                            {
++                                "name": "",
++                                "status": "",
++                                "duty": ""
++                            },
++                            {
++                                "name": "",
++                                "status": "",
++                                "duty": ""
++                            }
++                        ]
++                    }
++                ]
++            },
++            {
++                "lable": "",
++                "box": [
++                    {
++                        "tag": "",
++                        "Sn": [
++                            {
++                                "name": "",
++                                "status": "",
++                                "duty": ""
++                            },
++                            {
++                                "name": "",
++                                "status": "",
++                                "duty": ""
++                            },
++                            {
++                                "name": "",
++                                "status": "",
++                                "duty": ""
++                            }
++                        ]
++                    }
++                ]
++            }
++        ],
++        "title": "",
++        "rangeList": [
++            {
++                "name": "",
++                "percent": ""
++            },
++            {
++                "name": "",
++                "percent": ""
++            },
++            {
++                "name": "",
++                "percent": ""
++            }
++        ]
++}
+\ No newline at end of file
+diff --git a/package-lock.json b/package-lock.json
+index 5b19c04..e038574 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -908,6 +908,15 @@
+       "integrity": "sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==",
+       "dev": true
+     },
++    "axios": {
++      "version": "0.18.0",
++      "resolved": "http://registry.npmjs.org/axios/-/axios-0.18.0.tgz",
++      "integrity": "sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=",
++      "requires": {
++        "follow-redirects": "^1.3.0",
++        "is-buffer": "^1.1.5"
++      }
++    },
+     "babel-code-frame": {
+       "version": "6.26.0",
+       "resolved": "https://registry.npmjs.org/babel-code-frame/-/babel-code-frame-6.26.0.tgz",
+@@ -5154,7 +5163,6 @@
+       "version": "1.5.10",
+       "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.10.tgz",
+       "integrity": "sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==",
+-      "dev": true,
+       "requires": {
+         "debug": "=3.1.0"
+       },
+@@ -5163,7 +5171,6 @@
+           "version": "3.1.0",
+           "resolved": "https://registry.npmjs.org/debug/-/debug-3.1.0.tgz",
+           "integrity": "sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==",
+-          "dev": true,
+           "requires": {
+             "ms": "2.0.0"
+           }
+@@ -5329,14 +5336,12 @@
+         "balanced-match": {
+           "version": "1.0.0",
+           "bundled": true,
+-          "dev": true,
+-          "optional": true
++          "dev": true
+         },
+         "brace-expansion": {
+           "version": "1.1.11",
+           "bundled": true,
+           "dev": true,
+-          "optional": true,
+           "requires": {
+             "balanced-match": "^1.0.0",
+             "concat-map": "0.0.1"
+@@ -5351,20 +5356,17 @@
+         "code-point-at": {
+           "version": "1.1.0",
+           "bundled": true,
+-          "dev": true,
+-          "optional": true
++          "dev": true
+         },
+         "concat-map": {
+           "version": "0.0.1",
+           "bundled": true,
+-          "dev": true,
+-          "optional": true
++          "dev": true
+         },
+         "console-control-strings": {
+           "version": "1.1.0",
+           "bundled": true,
+-          "dev": true,
+-          "optional": true
++          "dev": true
+         },
+         "core-util-is": {
+           "version": "1.0.2",
+@@ -5481,8 +5483,7 @@
+         "inherits": {
+           "version": "2.0.3",
+           "bundled": true,
+-          "dev": true,
+-          "optional": true
++          "dev": true
+         },
+         "ini": {
+           "version": "1.3.5",
+@@ -5494,7 +5495,6 @@
+           "version": "1.0.0",
+           "bundled": true,
+           "dev": true,
+-          "optional": true,
+           "requires": {
+             "number-is-nan": "^1.0.0"
+           }
+@@ -5509,7 +5509,6 @@
+           "version": "3.0.4",
+           "bundled": true,
+           "dev": true,
+-          "optional": true,
+           "requires": {
+             "brace-expansion": "^1.1.7"
+           }
+@@ -5517,14 +5516,12 @@
+         "minimist": {
+           "version": "0.0.8",
+           "bundled": true,
+-          "dev": true,
+-          "optional": true
++          "dev": true
+         },
+         "minipass": {
+           "version": "2.2.4",
+           "bundled": true,
+           "dev": true,
+-          "optional": true,
+           "requires": {
+             "safe-buffer": "^5.1.1",
+             "yallist": "^3.0.0"
+@@ -5543,7 +5540,6 @@
+           "version": "0.5.1",
+           "bundled": true,
+           "dev": true,
+-          "optional": true,
+           "requires": {
+             "minimist": "0.0.8"
+           }
+@@ -5624,8 +5620,7 @@
+         "number-is-nan": {
+           "version": "1.0.1",
+           "bundled": true,
+-          "dev": true,
+-          "optional": true
++          "dev": true
+         },
+         "object-assign": {
+           "version": "4.1.1",
+@@ -5637,7 +5632,6 @@
+           "version": "1.4.0",
+           "bundled": true,
+           "dev": true,
+-          "optional": true,
+           "requires": {
+             "wrappy": "1"
+           }
+@@ -5759,7 +5753,6 @@
+           "version": "1.0.2",
+           "bundled": true,
+           "dev": true,
+-          "optional": true,
+           "requires": {
+             "code-point-at": "^1.0.0",
+             "is-fullwidth-code-point": "^1.0.0",
+@@ -6738,8 +6731,7 @@
+     "is-buffer": {
+       "version": "1.1.6",
+       "resolved": "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz",
+-      "integrity": "sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==",
+-      "dev": true
++      "integrity": "sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w=="
+     },
+     "is-builtin-module": {
+       "version": "1.0.0",
+@@ -8584,8 +8576,7 @@
+     "ms": {
+       "version": "2.0.0",
+       "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
+-      "integrity": "sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=",
+-      "dev": true
++      "integrity": "sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g="
+     },
+     "multicast-dns": {
+       "version": "6.2.3",
+@@ -14429,6 +14420,11 @@
+       "resolved": "https://registry.npmjs.org/vue/-/vue-2.5.17.tgz",
+       "integrity": "sha512-mFbcWoDIJi0w0Za4emyLiW72Jae0yjANHbCVquMKijcavBGypqlF7zHRgMa5k4sesdv7hv2rB4JPdZfR+TPfhQ=="
+     },
++    "vue-axios": {
++      "version": "2.1.4",
++      "resolved": "https://registry.npmjs.org/vue-axios/-/vue-axios-2.1.4.tgz",
++      "integrity": "sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA=="
++    },
+     "vue-eslint-parser": {
+       "version": "2.0.3",
+       "resolved": "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz",
+diff --git a/package.json b/package.json
+index 1974390..b972e65 100644
+--- a/package.json
++++ b/package.json
+@@ -16,8 +16,11 @@
+   "dependencies": {
+     "ajv": "^6.5.5",
+     "ajv-keywords": "^1.5.1",
++    "axios": "^0.18.0",
++    "jquery": "^3.3.1",
+     "mint-ui": "^2.2.13",
+     "vue": "^2.5.2",
++    "vue-axios": "^2.1.4",
+     "vue-resource": "^1.5.1",
+     "vue-router": "^3.0.1"
+   },
+diff --git a/src/App.vue b/src/App.vue
+index 1b2fa49..da72ba2 100644
+--- a/src/App.vue
++++ b/src/App.vue
+@@ -9,25 +9,27 @@
+       <!-- mt-button icon="more" slot="right"></mt-button> -->
+     </mt-header>
+     <!-- 中间的路由 router-view 区域 -->
+-    <router-view/>
++    <transition>
++      <router-view/>
++    </transition>
+     <!-- 底部 Tabbar 区域 -->
+     <nav class="mui-bar mui-bar-tab">
+-      <a class="mui-tab-item mui-active" href="#tabbar">
++      <router-link class="mui-tab-item" to="/home">
+         <span class="mui-icon mui-icon-home"></span>
+         <span class="mui-tab-label">首页</span>
+-      </a>
+-      <a class="mui-tab-item" href="#tabbar-with-chat">
+-        <span class="mui-icon mui-icon-email"></span>
+-        <span class="mui-tab-label">消息</span>
+-      </a>
+-      <a class="mui-tab-item" href="#tabbar-with-contact">
++      </router-link>
++      <router-link class="mui-tab-item" to="/member">
+         <span class="mui-icon mui-icon-contact"></span>
+-        <span class="mui-tab-label">通讯录</span>
+-      </a>
+-      <a class="mui-tab-item" href="#tabbar-with-map">
+-        <span class="mui-icon mui-icon-gear"></span>
+-        <span class="mui-tab-label">设置</span>
+-      </a>
++        <span class="mui-tab-label">会员</span>
++      </router-link>
++      <router-link class="mui-tab-item" to="/shopcar">
++        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
++        <span class="mui-tab-label">购物车</span>
++      </router-link>
++      <router-link class="mui-tab-item" to="/search">
++        <span class="mui-icon mui-icon-search"></span>
++        <span class="mui-tab-label">搜索</span>
++      </router-link>
+     </nav>
+   </div>
+ </template>
+@@ -45,9 +47,23 @@ export default {
+   -moz-osx-font-smoothing: grayscale;
+   text-align: center;
+   color: #2c3e50;
+-  margin-top: 60px;
++  margin-top: 40px;
++  overflow-x: hidden;
++}
++.v-enter {
++  opacity: 0;
++  -webkit-transform: translateX(100%);
++          transform: translateX(100%);
++}
++.v-leave-to {
++  opacity: 0;
++  -webkit-transform: translateX(-100%);
++          transform: translateX(-100%);
++  position: absolute;
++}
++.v-enter-active,
++.v-leave-active {
++  -webkit-transition: all 0.5s ease;
++  transition: all 0.5s ease;
+ }
+-/*header {
+-  background-color: lightblue;
+-}*/
+ </style>
+diff --git a/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG b/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG
+new file mode 100644
+index 0000000..444d55a
+--- /dev/null
++++ b/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG
+@@ -0,0 +1,660 @@
++我的项目第二次保存
++
++# --------------
++# Please enter the commit message for your changes. Everything below
++# this paragraph is ignored, and an empty message aborts the commit.
++# Just close the window to accept your message.
++diff --git a/.eslintrc.js b/.eslintrc.js
++index 22fdce8..113f3e1 100644
++--- a/.eslintrc.js
+++++ b/.eslintrc.js
++@@ -24,6 +24,9 @@ module.exports = {
++     // allow async-await
++     'generator-star-spacing': 'off',
++     // allow debugger during development
++-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+++    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+++    'no-tabs': 'off',
+++    "no-mixed-spaces-and-tabs": 'off',
+++    "indent": 'off'
++   }
++ }
++diff --git a/baobao b/baobao
++new file mode 160000
++index 0000000..d292f09
++--- /dev/null
+++++ b/baobao
++@@ -0,0 +1 @@
+++Subproject commit d292f09e0069283797e2c780829435d7378b3ca4
++diff --git a/src/App.vue b/src/App.vue
++index 1b2fa49..c6472c9 100644
++--- a/src/App.vue
+++++ b/src/App.vue
++@@ -12,22 +12,22 @@
++     <router-view/>
++     <!-- 底部 Tabbar 区域 -->
++     <nav class="mui-bar mui-bar-tab">
++-      <a class="mui-tab-item mui-active" href="#tabbar">
+++      <router-link class="mui-tab-item" to="/home">
++         <span class="mui-icon mui-icon-home"></span>
++         <span class="mui-tab-label">首页</span>
++-      </a>
++-      <a class="mui-tab-item" href="#tabbar-with-chat">
++-        <span class="mui-icon mui-icon-email"></span>
++-        <span class="mui-tab-label">消息</span>
++-      </a>
++-      <a class="mui-tab-item" href="#tabbar-with-contact">
+++      </router-link>
+++      <router-link class="mui-tab-item" to="/member">
++         <span class="mui-icon mui-icon-contact"></span>
++-        <span class="mui-tab-label">通讯录</span>
++-      </a>
++-      <a class="mui-tab-item" href="#tabbar-with-map">
++-        <span class="mui-icon mui-icon-gear"></span>
++-        <span class="mui-tab-label">设置</span>
++-      </a>
+++        <span class="mui-tab-label">会员</span>
+++      </router-link>
+++      <router-link class="mui-tab-item" to="/shopcar">
+++        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+++        <span class="mui-tab-label">购物车</span>
+++      </router-link>
+++      <router-link class="mui-tab-item" to="/search">
+++        <span class="mui-icon mui-icon-search"></span>
+++        <span class="mui-tab-label">搜索</span>
+++      </router-link>
++     </nav>
++   </div>
++ </template>
++diff --git a/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG b/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG
++new file mode 100644
++index 0000000..e38eee3
++--- /dev/null
+++++ b/src/components/tabbar/COMMIT_EDITMSG.COMMIT_EDITMSG
++@@ -0,0 +1,323 @@
+++我的项目第二次保存
+++
+++# --------------
+++# Please enter the commit message for your changes. Everything below
+++# this paragraph is ignored, and an empty message aborts the commit.
+++# Just close the window to accept your message.
+++diff --git a/.eslintrc.js b/.eslintrc.js
+++index 22fdce8..113f3e1 100644
+++--- a/.eslintrc.js
++++++ b/.eslintrc.js
+++@@ -24,6 +24,9 @@ module.exports = {
+++     // allow async-await
+++     'generator-star-spacing': 'off',
+++     // allow debugger during development
+++-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
++++    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
++++    'no-tabs': 'off',
++++    "no-mixed-spaces-and-tabs": 'off',
++++    "indent": 'off'
+++   }
+++ }
+++diff --git a/src/App.vue b/src/App.vue
+++index 1b2fa49..c6472c9 100644
+++--- a/src/App.vue
++++++ b/src/App.vue
+++@@ -12,22 +12,22 @@
+++     <router-view/>
+++     <!-- 底部 Tabbar 区域 -->
+++     <nav class="mui-bar mui-bar-tab">
+++-      <a class="mui-tab-item mui-active" href="#tabbar">
++++      <router-link class="mui-tab-item" to="/home">
+++         <span class="mui-icon mui-icon-home"></span>
+++         <span class="mui-tab-label">首页</span>
+++-      </a>
+++-      <a class="mui-tab-item" href="#tabbar-with-chat">
+++-        <span class="mui-icon mui-icon-email"></span>
+++-        <span class="mui-tab-label">消息</span>
+++-      </a>
+++-      <a class="mui-tab-item" href="#tabbar-with-contact">
++++      </router-link>
++++      <router-link class="mui-tab-item" to="/member">
+++         <span class="mui-icon mui-icon-contact"></span>
+++-        <span class="mui-tab-label">通讯录</span>
+++-      </a>
+++-      <a class="mui-tab-item" href="#tabbar-with-map">
+++-        <span class="mui-icon mui-icon-gear"></span>
+++-        <span class="mui-tab-label">设置</span>
+++-      </a>
++++        <span class="mui-tab-label">会员</span>
++++      </router-link>
++++      <router-link class="mui-tab-item" to="/shopcar">
++++        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
++++        <span class="mui-tab-label">购物车</span>
++++      </router-link>
++++      <router-link class="mui-tab-item" to="/search">
++++        <span class="mui-icon mui-icon-search"></span>
++++        <span class="mui-tab-label">搜索</span>
++++      </router-link>
+++     </nav>
+++   </div>
+++ </template>
+++diff --git a/src/components/tabbar/HomeContainer.vue b/src/components/tabbar/HomeContainer.vue
+++new file mode 100644
+++index 0000000..f4102fb
+++--- /dev/null
++++++ b/src/components/tabbar/HomeContainer.vue
+++@@ -0,0 +1,37 @@
++++<template>
++++  <div>
++++    <mt-swipe :auto="4000">
++++      <mt-swipe-item><img src="../../assets/logo.png" /></mt-swipe-item>
++++      <mt-swipe-item><img src="" /></mt-swipe-item>
++++      <mt-swipe-item><img src="" /></mt-swipe-item>
++++    </mt-swipe>
++++  </div>
++++</template>
++++
++++<script>
++++export default {
++++
++++  name: 'HomeContainer',
++++
++++  data () {
++++    return {
++++
++++    }
++++  }
++++}
++++</script>
++++
++++<style lang="css" scoped>
++++.mint-swipe {
++++    height: 200px;
++++}
++++.mint-swipe-item:first-child {
++++    background-color: lightblue;
++++}
++++.mint-swipe-item:nth-child(2) {
++++    background-color: cyan;
++++}
++++.mint-swipe-item:nth-child(3) {
++++    background-color: yellow;
++++}
++++</style>
+++diff --git a/src/components/tabbar/MemberContainer.vue b/src/components/tabbar/MemberContainer.vue
+++new file mode 100644
+++index 0000000..e3d11b0
+++--- /dev/null
++++++ b/src/components/tabbar/MemberContainer.vue
+++@@ -0,0 +1,21 @@
++++<template>
++++  <div>
++++    <h2>会员页面-宝宝</h2>
++++  </div>
++++</template>
++++
++++<script>
++++export default {
++++
++++  name: 'MemberContainer',
++++
++++  data () {
++++    return {
++++
++++    }
++++  }
++++}
++++</script>
++++
++++<style lang="css" scoped>
++++</style>
+++diff --git a/src/components/tabbar/SearchContainer.vue b/src/components/tabbar/SearchContainer.vue
+++new file mode 100644
+++index 0000000..bf3fd75
+++--- /dev/null
++++++ b/src/components/tabbar/SearchContainer.vue
+++@@ -0,0 +1,21 @@
++++<template>
++++	<div>
++++		<h2>搜索页面-宝宝</h2>
++++	</div>
++++</template>
++++
++++<script>
++++export default {
++++
++++  name: 'SearchContainer',
++++
++++  data () {
++++    return {
++++
++++    }
++++  }
++++}
++++</script>
++++
++++<style lang="css" scoped>
++++</style>
+++diff --git a/src/components/tabbar/ShopcarContainer.vue b/src/components/tabbar/ShopcarContainer.vue
+++new file mode 100644
+++index 0000000..3c44a6f
+++--- /dev/null
++++++ b/src/components/tabbar/ShopcarContainer.vue
+++@@ -0,0 +1,21 @@
++++<template>
++++	<div>
++++		<h2>购物车页面-宝宝</h2>
++++	</div>
++++</template>
++++
++++<script>
++++export default {
++++
++++  name: 'ShopcarContainer',
++++
++++  data () {
++++    return {
++++
++++    }
++++  }
++++}
++++</script>
++++
++++<style lang="css" scoped>
++++</style>
+++diff --git a/src/lib/mui/css/icons-extra.css b/src/lib/mui/css/icons-extra.css
+++new file mode 100644
+++index 0000000..94ea3e5
+++--- /dev/null
++++++ b/src/lib/mui/css/icons-extra.css
+++@@ -0,0 +1,63 @@
++++@font-face {
++++    font-family: MuiiconSpread;
++++    font-weight: normal;
++++    font-style: normal;
++++    src:  url('../fonts/mui-icons-extra.ttf') format('truetype'); /* iOS 4.1- */
++++}
++++.mui-icon-extra
++++{
++++    font-family: MuiiconSpread;
++++    font-size: 24px;
++++    font-weight: normal;
++++    font-style: normal;
++++    line-height: 1;
++++    display: inline-block;
++++    text-decoration: none;
++++    -webkit-font-smoothing: antialiased;
++++}
++++.mui-icon-extra-cold:before { content: "\e500"; }
++++.mui-icon-extra-share:before { content: "\e200"; }
++++.mui-icon-extra-class:before { content: "\e118"; }
++++.mui-icon-extra-custom:before { content: "\e117"; }
++++.mui-icon-extra-new:before { content: "\e103"; }
++++.mui-icon-extra-card:before { content: "\e104"; }
++++.mui-icon-extra-grech:before { content: "\e105"; }
++++.mui-icon-extra-trend:before { content: "\e106"; }
++++.mui-icon-extra-filter:before { content: "\e207"; }
++++.mui-icon-extra-holiday:before { content: "\e300"; }
++++.mui-icon-extra-cart:before { content: "\e107"; }
++++.mui-icon-extra-heart:before { content: "\e180"; }
++++.mui-icon-extra-computer:before { content: "\e600"; }
++++.mui-icon-extra-express:before { content: "\e108"; }
++++.mui-icon-extra-gift:before { content: "\e109"; }
++++.mui-icon-extra-gold:before { content: "\e102"; }
++++.mui-icon-extra-lamp:before { content: "\e601"; }
++++.mui-icon-extra-rank:before { content: "\e110"; }
++++.mui-icon-extra-notice:before { content: "\e111"; }
++++.mui-icon-extra-sweep:before { content: "\e202"; }
++++.mui-icon-extra-arrowleftcricle:before { content: "\e401"; }
++++.mui-icon-extra-dictionary:before { content: "\e602"; }
++++.mui-icon-extra-heart-filled:before { content: "\e119"; }
++++.mui-icon-extra-xiaoshuo:before { content: "\e607"; }
++++.mui-icon-extra-top:before { content: "\e403"; }
++++.mui-icon-extra-people:before { content: "\e203"; }
++++.mui-icon-extra-topic:before { content: "\e603"; }
++++.mui-icon-extra-hotel:before { content: "\e301"; }
++++.mui-icon-extra-like:before { content: "\e206"; }
++++.mui-icon-extra-regist:before { content: "\e201"; }
++++.mui-icon-extra-order:before { content: "\e113"; }
++++.mui-icon-extra-alipay:before { content: "\e114"; }
++++.mui-icon-extra-find:before { content: "\e400"; }
++++.mui-icon-extra-arrowrightcricle:before { content: "\e402"; }
++++.mui-icon-extra-calendar:before { content: "\e115"; }
++++.mui-icon-extra-prech:before { content: "\e116"; }
++++.mui-icon-extra-cate:before { content: "\e501"; }
++++.mui-icon-extra-comment:before { content: "\e209"; }
++++.mui-icon-extra-at:before { content: "\e208"; }
++++.mui-icon-extra-addpeople:before { content: "\e204"; }
++++.mui-icon-extra-peoples:before { content: "\e205"; }
++++.mui-icon-extra-calc:before { content: "\e101"; }
++++.mui-icon-extra-classroom:before { content: "\e604"; }
++++.mui-icon-extra-phone:before { content: "\e404"; }
++++.mui-icon-extra-university:before { content: "\e605"; }
++++.mui-icon-extra-outline:before { content: "\e606"; }
+++diff --git a/src/lib/mui/fonts/mui-icons-extra.ttf b/src/lib/mui/fonts/mui-icons-extra.ttf
+++new file mode 100644
+++index 0000000..8b5c92d
+++Binary files /dev/null and b/src/lib/mui/fonts/mui-icons-extra.ttf differ
+++diff --git a/src/main.js b/src/main.js
+++index df6279f..4c23ad7 100644
+++--- a/src/main.js
++++++ b/src/main.js
+++@@ -4,11 +4,15 @@ import Vue from 'vue'
+++ import App from './App'
+++ import router from './router'
+++ import './lib/mui/css/mui.css'
+++-import { Header, Button } from 'mint-ui'
++++import './lib/mui/css/icons-extra.css'
++++
++++import { Header, Button, Swipe, SwipeItem } from 'mint-ui'
+++ // import resource from './resource'
+++ // import store from './store'
+++ Vue.component(Header.name, Header)
+++ Vue.component(Button.name, Button)
++++Vue.component(Swipe.name, Swipe)
++++Vue.component(SwipeItem.name, SwipeItem)
+++ 
+++ Vue.config.productionTip = false
+++ 
+++diff --git a/src/router/index.js b/src/router/index.js
+++index 5fa7f9d..010cd16 100644
+++--- a/src/router/index.js
++++++ b/src/router/index.js
+++@@ -1,6 +1,10 @@
+++ import Vue from 'vue'
+++ import Router from 'vue-router'
+++ import HelloWorld from '@/components/HelloWorld'
++++import HomeContainer from '@/components/tabbar/HomeContainer'
++++import MemberContainer from '@/components/tabbar/MemberContainer'
++++import ShopcarContainer from '@/components/tabbar/ShopcarContainer'
++++import SearchContainer from '@/components/tabbar/SearchContainer'
+++ 
+++ Vue.use(Router)
+++ 
+++@@ -10,6 +14,27 @@ export default new Router({
+++       path: '/',
+++       name: 'HelloWorld',
+++       component: HelloWorld
++++    },
++++    {
++++    	path: '/home',
++++			name: 'HomeContainer',
++++      component: HomeContainer
++++    },
++++    {
++++    	path: '/member',
++++    	name: '/MemberContainer',
++++      component: MemberContainer
++++    },
++++    {
++++    	path: '/shopcar',
++++      name: 'ShopcarContainer',
++++      component: ShopcarContainer
++++    },
++++    {
++++    	path: '/search',
++++			name: 'SearchContainer',
++++      component: SearchContainer
+++     }
+++-  ]
++++  ],
++++  linkActiveClass: 'mui-active'
+++ })
++\ No newline at end of file
++diff --git a/src/components/tabbar/HomeContainer.vue b/src/components/tabbar/HomeContainer.vue
++new file mode 100644
++index 0000000..f4102fb
++--- /dev/null
+++++ b/src/components/tabbar/HomeContainer.vue
++@@ -0,0 +1,37 @@
+++<template>
+++  <div>
+++    <mt-swipe :auto="4000">
+++      <mt-swipe-item><img src="../../assets/logo.png" /></mt-swipe-item>
+++      <mt-swipe-item><img src="" /></mt-swipe-item>
+++      <mt-swipe-item><img src="" /></mt-swipe-item>
+++    </mt-swipe>
+++  </div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'HomeContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++.mint-swipe {
+++    height: 200px;
+++}
+++.mint-swipe-item:first-child {
+++    background-color: lightblue;
+++}
+++.mint-swipe-item:nth-child(2) {
+++    background-color: cyan;
+++}
+++.mint-swipe-item:nth-child(3) {
+++    background-color: yellow;
+++}
+++</style>
++diff --git a/src/components/tabbar/MemberContainer.vue b/src/components/tabbar/MemberContainer.vue
++new file mode 100644
++index 0000000..e3d11b0
++--- /dev/null
+++++ b/src/components/tabbar/MemberContainer.vue
++@@ -0,0 +1,21 @@
+++<template>
+++  <div>
+++    <h2>会员页面-宝宝</h2>
+++  </div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'MemberContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++</style>
++diff --git a/src/components/tabbar/SearchContainer.vue b/src/components/tabbar/SearchContainer.vue
++new file mode 100644
++index 0000000..bf3fd75
++--- /dev/null
+++++ b/src/components/tabbar/SearchContainer.vue
++@@ -0,0 +1,21 @@
+++<template>
+++	<div>
+++		<h2>搜索页面-宝宝</h2>
+++	</div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'SearchContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++</style>
++diff --git a/src/components/tabbar/ShopcarContainer.vue b/src/components/tabbar/ShopcarContainer.vue
++new file mode 100644
++index 0000000..3c44a6f
++--- /dev/null
+++++ b/src/components/tabbar/ShopcarContainer.vue
++@@ -0,0 +1,21 @@
+++<template>
+++	<div>
+++		<h2>购物车页面-宝宝</h2>
+++	</div>
+++</template>
+++
+++<script>
+++export default {
+++
+++  name: 'ShopcarContainer',
+++
+++  data () {
+++    return {
+++
+++    }
+++  }
+++}
+++</script>
+++
+++<style lang="css" scoped>
+++</style>
++diff --git a/src/lib/mui/css/icons-extra.css b/src/lib/mui/css/icons-extra.css
++new file mode 100644
++index 0000000..94ea3e5
++--- /dev/null
+++++ b/src/lib/mui/css/icons-extra.css
++@@ -0,0 +1,63 @@
+++@font-face {
+++    font-family: MuiiconSpread;
+++    font-weight: normal;
+++    font-style: normal;
+++    src:  url('../fonts/mui-icons-extra.ttf') format('truetype'); /* iOS 4.1- */
+++}
+++.mui-icon-extra
+++{
+++    font-family: MuiiconSpread;
+++    font-size: 24px;
+++    font-weight: normal;
+++    font-style: normal;
+++    line-height: 1;
+++    display: inline-block;
+++    text-decoration: none;
+++    -webkit-font-smoothing: antialiased;
+++}
+++.mui-icon-extra-cold:before { content: "\e500"; }
+++.mui-icon-extra-share:before { content: "\e200"; }
+++.mui-icon-extra-class:before { content: "\e118"; }
+++.mui-icon-extra-custom:before { content: "\e117"; }
+++.mui-icon-extra-new:before { content: "\e103"; }
+++.mui-icon-extra-card:before { content: "\e104"; }
+++.mui-icon-extra-grech:before { content: "\e105"; }
+++.mui-icon-extra-trend:before { content: "\e106"; }
+++.mui-icon-extra-filter:before { content: "\e207"; }
+++.mui-icon-extra-holiday:before { content: "\e300"; }
+++.mui-icon-extra-cart:before { content: "\e107"; }
+++.mui-icon-extra-heart:before { content: "\e180"; }
+++.mui-icon-extra-computer:before { content: "\e600"; }
+++.mui-icon-extra-express:before { content: "\e108"; }
+++.mui-icon-extra-gift:before { content: "\e109"; }
+++.mui-icon-extra-gold:before { content: "\e102"; }
+++.mui-icon-extra-lamp:before { content: "\e601"; }
+++.mui-icon-extra-rank:before { content: "\e110"; }
+++.mui-icon-extra-notice:before { content: "\e111"; }
+++.mui-icon-extra-sweep:before { content: "\e202"; }
+++.mui-icon-extra-arrowleftcricle:before { content: "\e401"; }
+++.mui-icon-extra-dictionary:before { content: "\e602"; }
+++.mui-icon-extra-heart-filled:before { content: "\e119"; }
+++.mui-icon-extra-xiaoshuo:before { content: "\e607"; }
+++.mui-icon-extra-top:before { content: "\e403"; }
+++.mui-icon-extra-people:before { content: "\e203"; }
+++.mui-icon-extra-topic:before { content: "\e603"; }
+++.mui-icon-extra-hotel:before { content: "\e301"; }
+++.mui-icon-extra-like:before { content: "\e206"; }
+++.mui-icon-extra-regist:before { content: "\e201"; }
+++.mui-icon-extra-order:before { content: "\e113"; }
+++.mui-icon-extra-alipay:before { content: "\e114"; }
+++.mui-icon-extra-find:before { content: "\e400"; }
+++.mui-icon-extra-arrowrightcricle:before { content: "\e402"; }
+++.mui-icon-extra-calendar:before { content: "\e115"; }
+++.mui-icon-extra-prech:before { content: "\e116"; }
+++.mui-icon-extra-cate:before { content: "\e501"; }
+++.mui-icon-extra-comment:before { content: "\e209"; }
+++.mui-icon-extra-at:before { content: "\e208"; }
+++.mui-icon-extra-addpeople:before { content: "\e204"; }
+++.mui-icon-extra-peoples:before { content: "\e205"; }
+++.mui-icon-extra-calc:before { content: "\e101"; }
+++.mui-icon-extra-classroom:before { content: "\e604"; }
+++.mui-icon-extra-phone:before { content: "\e404"; }
+++.mui-icon-extra-university:before { content: "\e605"; }
+++.mui-icon-extra-outline:before { content: "\e606"; }
++diff --git a/src/lib/mui/fonts/mui-icons-extra.ttf b/src/lib/mui/fonts/mui-icons-extra.ttf
++new file mode 100644
++index 0000000..8b5c92d
++Binary files /dev/null and b/src/lib/mui/fonts/mui-icons-extra.ttf differ
++diff --git a/src/main.js b/src/main.js
++index df6279f..4c23ad7 100644
++--- a/src/main.js
+++++ b/src/main.js
++@@ -4,11 +4,15 @@ import Vue from 'vue'
++ import App from './App'
++ import router from './router'
++ import './lib/mui/css/mui.css'
++-import { Header, Button } from 'mint-ui'
+++import './lib/mui/css/icons-extra.css'
+++
+++import { Header, Button, Swipe, SwipeItem } from 'mint-ui'
++ // import resource from './resource'
++ // import store from './store'
++ Vue.component(Header.name, Header)
++ Vue.component(Button.name, Button)
+++Vue.component(Swipe.name, Swipe)
+++Vue.component(SwipeItem.name, SwipeItem)
++ 
++ Vue.config.productionTip = false
++ 
++diff --git a/src/router/index.js b/src/router/index.js
++index 5fa7f9d..010cd16 100644
++--- a/src/router/index.js
+++++ b/src/router/index.js
++@@ -1,6 +1,10 @@
++ import Vue from 'vue'
++ import Router from 'vue-router'
++ import HelloWorld from '@/components/HelloWorld'
+++import HomeContainer from '@/components/tabbar/HomeContainer'
+++import MemberContainer from '@/components/tabbar/MemberContainer'
+++import ShopcarContainer from '@/components/tabbar/ShopcarContainer'
+++import SearchContainer from '@/components/tabbar/SearchContainer'
++ 
++ Vue.use(Router)
++ 
++@@ -10,6 +14,27 @@ export default new Router({
++       path: '/',
++       name: 'HelloWorld',
++       component: HelloWorld
+++    },
+++    {
+++    	path: '/home',
+++			name: 'HomeContainer',
+++      component: HomeContainer
+++    },
+++    {
+++    	path: '/member',
+++    	name: '/MemberContainer',
+++      component: MemberContainer
+++    },
+++    {
+++    	path: '/shopcar',
+++      name: 'ShopcarContainer',
+++      component: ShopcarContainer
+++    },
+++    {
+++    	path: '/search',
+++			name: 'SearchContainer',
+++      component: SearchContainer
++     }
++-  ]
+++  ],
+++  linkActiveClass: 'mui-active'
++ })
+\ No newline at end of file
+diff --git a/src/components/tabbar/HomeContainer.vue b/src/components/tabbar/HomeContainer.vue
+new file mode 100644
+index 0000000..5490141
+--- /dev/null
++++ b/src/components/tabbar/HomeContainer.vue
+@@ -0,0 +1,101 @@
++<template>
++  <div>
++    <mt-swipe :auto="4000">
++      <mt-swipe-item v-for = 'item in lunbotu' :key = "item.id">
++        <img :src="item.url" />
++      </mt-swipe-item>
++    </mt-swipe>
++    <ul class="mui-table-view mui-grid-view mui-grid-9">
++      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" v-for = "title in middlecontent" :key = "title.id"><a href="#">
++        <span :class="title.class"></span>
++        <div class="mui-media-body">{{ title.title1 }}</div></a></li>
++    </ul>
++  </div>
++</template>
++
++<script>
++// import { Toast } from 'mint-ui'
++
++export default {
++
++  name: 'HomeContainer',
++
++  data () {
++    return {
++      lunbotu: [
++        {url: 'http://tp.yiaedu.com/showimg.php?url=http://uploads.xuexila.com/allimg/1703/867-1F330164643.jpg'},
++        {url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543050430033&di=225423344c686f8e5d44e9b71ad90929&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F03%2F02%2F58V58PICTFk_1024.jpg'},
++        {url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543050430030&di=57e53743f573d99e99643be4ebe26133&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F11%2F68%2F32%2F08658PICred.jpg'}
++      ],
++      middlecontent: [
++        {
++          title1: '新闻资讯',
++          class: 'mui-icon mui-icon-extra mui-icon-extra-new'
++        },
++        {
++          title1: '图片分享',
++          class: 'mui-icon mui-icon-image'
++        },
++        {
++          title1: '商品购买',
++          class: 'mui-icon mui-icon-extra mui-icon-extra-cart'
++        },
++        {
++          title1: '留言反馈',
++          class: 'mui-icon mui-icon-email-filled'
++        },
++        {
++          title1: '视频专区',
++          class: 'mui-icon mui-icon-extra mui-icon-extra-computer'
++        },
++        {
++          title1: '联系我们',
++          class: 'mui-icon mui-icon-extra mui-icon-extra-custom'
++        }
++      ]
++    }
++  },
++  created () {
++    // this.getLunbotu()
++  },
++  methods: {
++    // getLunbotu () {
++    //   this.$http.get('../../../lunbotu.json', {emulateJSON: true}).then(result => {
++    //     if (result.body.status === 0) {
++    //       this.lunbotuList = result.body.message
++    //     } else {
++    //       Toast('加载轮播图失败')
++    //     }
++    //   }).catch(function (error) {
++    //     console.log(error)
++    //     this.errorMsg = error
++    //   })
++    // }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++.mint-swipe {
++    height: 200px;
++}
++.mint-swipe-item:first-child {
++    background-color: lightblue;
++}
++.mint-swipe-item:nth-child(2) {
++    background-color: cyan;
++}
++.mint-swipe-item:nth-child(3) {
++    background-color: yellow;
++}
++.mui-grid-view.mui-grid-9 {
++  border: none;
++  background-color: white;
++}
++.mui-grid-view.mui-grid-9 .mui-table-view-cell {
++  border: none;
++}
++.mui-media-body{
++  font-size: 14px;
++}
++</style>
+diff --git a/src/components/tabbar/MemberContainer.vue b/src/components/tabbar/MemberContainer.vue
+new file mode 100644
+index 0000000..e3d11b0
+--- /dev/null
++++ b/src/components/tabbar/MemberContainer.vue
+@@ -0,0 +1,21 @@
++<template>
++  <div>
++    <h2>会员页面-宝宝</h2>
++  </div>
++</template>
++
++<script>
++export default {
++
++  name: 'MemberContainer',
++
++  data () {
++    return {
++
++    }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++</style>
+diff --git a/src/components/tabbar/SearchContainer.vue b/src/components/tabbar/SearchContainer.vue
+new file mode 100644
+index 0000000..bf3fd75
+--- /dev/null
++++ b/src/components/tabbar/SearchContainer.vue
+@@ -0,0 +1,21 @@
++<template>
++	<div>
++		<h2>搜索页面-宝宝</h2>
++	</div>
++</template>
++
++<script>
++export default {
++
++  name: 'SearchContainer',
++
++  data () {
++    return {
++
++    }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++</style>
+diff --git a/src/components/tabbar/ShopcarContainer.vue b/src/components/tabbar/ShopcarContainer.vue
+new file mode 100644
+index 0000000..3c44a6f
+--- /dev/null
++++ b/src/components/tabbar/ShopcarContainer.vue
+@@ -0,0 +1,21 @@
++<template>
++	<div>
++		<h2>购物车页面-宝宝</h2>
++	</div>
++</template>
++
++<script>
++export default {
++
++  name: 'ShopcarContainer',
++
++  data () {
++    return {
++
++    }
++  }
++}
++</script>
++
++<style lang="css" scoped>
++</style>
+diff --git a/src/lib/mui/css/icons-extra.css b/src/lib/mui/css/icons-extra.css
+new file mode 100644
+index 0000000..94ea3e5
+--- /dev/null
++++ b/src/lib/mui/css/icons-extra.css
+@@ -0,0 +1,63 @@
++@font-face {
++    font-family: MuiiconSpread;
++    font-weight: normal;
++    font-style: normal;
++    src:  url('../fonts/mui-icons-extra.ttf') format('truetype'); /* iOS 4.1- */
++}
++.mui-icon-extra
++{
++    font-family: MuiiconSpread;
++    font-size: 24px;
++    font-weight: normal;
++    font-style: normal;
++    line-height: 1;
++    display: inline-block;
++    text-decoration: none;
++    -webkit-font-smoothing: antialiased;
++}
++.mui-icon-extra-cold:before { content: "\e500"; }
++.mui-icon-extra-share:before { content: "\e200"; }
++.mui-icon-extra-class:before { content: "\e118"; }
++.mui-icon-extra-custom:before { content: "\e117"; }
++.mui-icon-extra-new:before { content: "\e103"; }
++.mui-icon-extra-card:before { content: "\e104"; }
++.mui-icon-extra-grech:before { content: "\e105"; }
++.mui-icon-extra-trend:before { content: "\e106"; }
++.mui-icon-extra-filter:before { content: "\e207"; }
++.mui-icon-extra-holiday:before { content: "\e300"; }
++.mui-icon-extra-cart:before { content: "\e107"; }
++.mui-icon-extra-heart:before { content: "\e180"; }
++.mui-icon-extra-computer:before { content: "\e600"; }
++.mui-icon-extra-express:before { content: "\e108"; }
++.mui-icon-extra-gift:before { content: "\e109"; }
++.mui-icon-extra-gold:before { content: "\e102"; }
++.mui-icon-extra-lamp:before { content: "\e601"; }
++.mui-icon-extra-rank:before { content: "\e110"; }
++.mui-icon-extra-notice:before { content: "\e111"; }
++.mui-icon-extra-sweep:before { content: "\e202"; }
++.mui-icon-extra-arrowleftcricle:before { content: "\e401"; }
++.mui-icon-extra-dictionary:before { content: "\e602"; }
++.mui-icon-extra-heart-filled:before { content: "\e119"; }
++.mui-icon-extra-xiaoshuo:before { content: "\e607"; }
++.mui-icon-extra-top:before { content: "\e403"; }
++.mui-icon-extra-people:before { content: "\e203"; }
++.mui-icon-extra-topic:before { content: "\e603"; }
++.mui-icon-extra-hotel:before { content: "\e301"; }
++.mui-icon-extra-like:before { content: "\e206"; }
++.mui-icon-extra-regist:before { content: "\e201"; }
++.mui-icon-extra-order:before { content: "\e113"; }
++.mui-icon-extra-alipay:before { content: "\e114"; }
++.mui-icon-extra-find:before { content: "\e400"; }
++.mui-icon-extra-arrowrightcricle:before { content: "\e402"; }
++.mui-icon-extra-calendar:before { content: "\e115"; }
++.mui-icon-extra-prech:before { content: "\e116"; }
++.mui-icon-extra-cate:before { content: "\e501"; }
++.mui-icon-extra-comment:before { content: "\e209"; }
++.mui-icon-extra-at:before { content: "\e208"; }
++.mui-icon-extra-addpeople:before { content: "\e204"; }
++.mui-icon-extra-peoples:before { content: "\e205"; }
++.mui-icon-extra-calc:before { content: "\e101"; }
++.mui-icon-extra-classroom:before { content: "\e604"; }
++.mui-icon-extra-phone:before { content: "\e404"; }
++.mui-icon-extra-university:before { content: "\e605"; }
++.mui-icon-extra-outline:before { content: "\e606"; }
+diff --git a/src/lib/mui/fonts/mui-icons-extra.ttf b/src/lib/mui/fonts/mui-icons-extra.ttf
+new file mode 100644
+index 0000000..8b5c92d
+Binary files /dev/null and b/src/lib/mui/fonts/mui-icons-extra.ttf differ
+diff --git a/src/main.js b/src/main.js
+index df6279f..5126664 100644
+--- a/src/main.js
++++ b/src/main.js
+@@ -4,11 +4,21 @@ import Vue from 'vue'
+ import App from './App'
+ import router from './router'
+ import './lib/mui/css/mui.css'
+-import { Header, Button } from 'mint-ui'
++import './lib/mui/css/icons-extra.css'
++import VueResource from 'vue-resource'
++// import axios from 'axios'
++
++import { Header, Button, Swipe, SwipeItem } from 'mint-ui'
+ // import resource from './resource'
+ // import store from './store'
+ Vue.component(Header.name, Header)
+ Vue.component(Button.name, Button)
++Vue.component(Swipe.name, Swipe)
++Vue.component(SwipeItem.name, SwipeItem)
++
++Vue.use(VueResource)
++
++// Vue.prototype.$http = axios
+ 
+ Vue.config.productionTip = false
+ 
+diff --git a/src/router/index.js b/src/router/index.js
+index 5fa7f9d..64d36ca 100644
+--- a/src/router/index.js
++++ b/src/router/index.js
+@@ -1,6 +1,10 @@
+ import Vue from 'vue'
+ import Router from 'vue-router'
+-import HelloWorld from '@/components/HelloWorld'
++// import HelloWorld from '@/components/HelloWorld'
++import HomeContainer from '@/components/tabbar/HomeContainer'
++import MemberContainer from '@/components/tabbar/MemberContainer'
++import ShopcarContainer from '@/components/tabbar/ShopcarContainer'
++import SearchContainer from '@/components/tabbar/SearchContainer'
+ 
+ Vue.use(Router)
+ 
+@@ -8,8 +12,28 @@ export default new Router({
+   routes: [
+     {
+       path: '/',
+-      name: 'HelloWorld',
+-      component: HelloWorld
++      redirect: '/home'
++    },
++    {
++    	path: '/home',
++			name: 'HomeContainer',
++      component: HomeContainer
++    },
++    {
++    	path: '/member',
++    	name: '/MemberContainer',
++      component: MemberContainer
++    },
++    {
++    	path: '/shopcar',
++      name: 'ShopcarContainer',
++      component: ShopcarContainer
++    },
++    {
++    	path: '/search',
++			name: 'SearchContainer',
++      component: SearchContainer
+     }
+-  ]
++  ],
++  linkActiveClass: 'mui-active'
+ })

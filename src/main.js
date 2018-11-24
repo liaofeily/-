@@ -4,11 +4,21 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import './lib/mui/css/mui.css'
-import { Header, Button } from 'mint-ui'
+import './lib/mui/css/icons-extra.css'
+import VueResource from 'vue-resource'
+// import axios from 'axios'
+
+import { Header, Button, Swipe, SwipeItem } from 'mint-ui'
 // import resource from './resource'
 // import store from './store'
 Vue.component(Header.name, Header)
 Vue.component(Button.name, Button)
+Vue.component(Swipe.name, Swipe)
+Vue.component(SwipeItem.name, SwipeItem)
+
+Vue.use(VueResource)
+
+// Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
