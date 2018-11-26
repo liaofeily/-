@@ -67,7 +67,6 @@ export default {
     getLunbotu () {
       this.$http.get('static/json/lunbotu.json', {emulateJSON: true}).then(result => {
         if (result.body.status === 0) {
-          console.log(result.body.message)
           this.lunbotu = result.body.message
         } else {
           Toast('加载轮播图失败')

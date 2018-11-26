@@ -7,6 +7,7 @@ import ShopcarContainer from '@/components/tabbar/ShopcarContainer'
 import SearchContainer from '@/components/tabbar/SearchContainer'
 import NewsList from '@/components/news/NewsList'
 import ImageList from '@/components/imageshare/ImagesList'
+import Newsinfo from '@/components/news/Newsinfo'
 
 Vue.use(Router)
 
@@ -45,7 +46,12 @@ export default new Router({
 			path: '/home/imagelist',
 			name: 'ImageList',
 			component: ImageList
-		}
+		},
+    {
+      path: '/home/newsinfo/:id',
+      name: 'Newsinfo',
+      component: Newsinfo
+    }
   ],
   linkActiveClass: 'mui-active'
 })

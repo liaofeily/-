@@ -71,4 +71,8 @@ export default {
   box-shadow: none;
   border-top: .3px solid rgba(0,0,0,.85)
 }
+.mint-header-title {
+  font-size: 18px;
+  font-weight: bold;
+}
 </style>
