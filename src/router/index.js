@@ -8,6 +8,11 @@ import SearchContainer from '@/components/tabbar/SearchContainer'
 import NewsList from '@/components/news/NewsList'
 import ImageList from '@/components/imageshare/ImagesList'
 import Newsinfo from '@/components/news/Newsinfo'
+import Imageinfo from '@/components/imageshare/Imagesinfo'
+import GoodsList from '@/components/goods/GoodsList'
+import Goodsinfo from '@/components/goods/Goodsinfo'
+import Goodsdesc from '@/components/goods/Goodsdesc'
+import Goodscomment from '@/components/goods/Goodscomment'
 
 Vue.use(Router)
 
@@ -51,6 +56,31 @@ export default new Router({
       path: '/home/newsinfo/:id',
       name: 'Newsinfo',
       component: Newsinfo
+    },
+    {
+      path: '/home/imageinfo/:id',
+      name: 'Imageinfo',
+      component: Imageinfo
+    },
+    {
+      path: '/home/goodslist',
+      name: 'GoodsList',
+      component: GoodsList
+    },
+    {
+      path: '/home/goodsinfo/:id',
+      name: 'Goodsinfo',
+      component: Goodsinfo
+    },
+    {
+      path: '/home/goodsdesc/:id',
+      name: 'Goodsdesc',
+      component: Goodsdesc
+    },
+    {
+      path: '/home/goodscomment/:id',
+      name: 'Goodscomment',
+      component: Goodscomment
     }
   ],
   linkActiveClass: 'mui-active'

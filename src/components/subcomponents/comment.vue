@@ -4,9 +4,9 @@
 		<hr/>
 		<div class="form-group">
 			<label>评论内容：</label>
-			<textarea class="form-control" rows="5" v-model = "content" placeholder="请输入需要评论的内容..."></textarea>
+			<textarea class="form-control" rows="5" v-model.trim = "content" placeholder="请输入需要评论的内容..."></textarea>
 		</div>
-		<mt-button type="primary" size="large">发表评论</mt-button>
+		<mt-button type="primary" size="large" @click = "postComment">发表评论</mt-button>
 		<ul class="list-group">
 			<li class="cmt" v-for = "(item, i) in comments" :key = "item.add_time">
 				<div>
@@ -45,11 +45,31 @@ export default {
   			} else {
   				Toast('加载评论列表失败')
   			}
-  		})
+  		}).catch(function (error) {
+        if (error.status === 404 && error.statusText === "Not Found") {
+          Toast('没有更多了')
+        }
+      })
   	},
   	getMore () {
   		this.pageIndex++
 			this.getContainer()
+  	},
+  	postComment () {
+  		if (this.content.length === 0) {
+  			return Toast('评论内容不能为空！！！')
+  		}
+  		this.$http.post('static/json/postcomment' + this.$route.params.id + '.json', {
+  			content: this.content
+  		}).then(function (result) {
+  			if (result.body.status === 0) {
+  				var cmt = {
+  					username: '匿名用户', add_time: Date.now(), content: this.message.trim()
+  				}
+  				this.comments.unshift(cmt)
+  				this.message = ''
+  			}
+  		})
   	}
   }
 }
