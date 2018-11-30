@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>会员页面-宝宝</h2>
+    <h2>会员页面</h2>
   </div>
 </template>
 

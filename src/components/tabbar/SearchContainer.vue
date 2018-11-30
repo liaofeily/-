@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>搜索页面-宝宝</h2>
+		<h2>搜索页面</h2>
 	</div>
 </template>
 

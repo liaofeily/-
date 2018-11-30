@@ -7,6 +7,7 @@ import './assets/mui/css/mui.min.css'
 import './assets/mui/css/icons-extra.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import VueResource from 'vue-resource'
+import store from './store/index.js'
 import moment from 'moment'
 import VuePreview from 'vue-preview'
 // import axios from 'axios'
@@ -36,7 +37,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  // store,
+  store,
   components: { App },
   template: '<App/>'
 })

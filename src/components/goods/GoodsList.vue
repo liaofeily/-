@@ -52,7 +52,9 @@ export default {
       this.$http.get('static/json/goods/getgoods' + this.pageindex + '.json')
         .then(result => {
           if (result.body.status === 0) {
+            console.log(this.goodslist);
             this.goodslist = this.goodslist.concat(result.body.message)
+            console.log(this.goodslist);
           } else {
             Toast('商品列表加载失败')
           }

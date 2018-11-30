@@ -1,8 +1,8 @@
 <template>
   <div class="goodsinfo-container">
-    <transition @before-enter="beforeEnter" @enter="Enter" @after-enter="afterEnter"> 
-	 		<div class="ball" v-show="ballflag" ref="ball"></div>
-	 	</transition>
+    <transition @before-enter="beforeEnter" @enter="Enter" @after-enter="afterEnter">
+      <div class="ball" v-show="ballflag" ref="ball"></div>
+    </transition>
     <!-- 商品轮播图区域 -->
     <div class="mui-card">
       <div class="mui-card-content">
@@ -18,10 +18,10 @@
         <div class="mui-card-content-inner">
           <p class="price">
             市场价：<del>￥2699</del>
-            销售价：<span class="sellprice">￥2199</span>
+            销售价：<span class="sellprice">￥{{ sell_price }}</span>
           </p>
           <p class="buynum">
-            购买数量：<numbox @getcount = "getSelectedCount"></numbox>
+            购买数量：<numbox @getcount="getSelectedCount" :max = "goods_num"></numbox>
           </p>
           <p>
             <mt-button type="primary" size="small">立即购买</mt-button>
@@ -36,7 +36,7 @@
       <div class="mui-card-content">
         <div class="mui-card-content-inner">
           <p>商品货号:</p>
-          <p>库存情况:</p>
+          <p>库存情况: {{ goods_num }}</p>
           <p>上架时间:</p>
         </div>
       </div>
@@ -60,7 +60,9 @@ export default {
       goodsinfolist: [],
       id: this.$route.params.id,
       ballflag: false,
-      selectedCount: 1
+      selectedCount: 1,
+      sell_price: 2199,
+      goods_num:50
     }
   },
   created() {
@@ -85,6 +87,16 @@ export default {
     },
     addToShopCar() {
       this.ballflag = !this.ballflag
+
+      var goodsinfo = { 
+        id: this.id,
+        count: this.selectedCount,
+        selected: true,
+        price: this.sell_price
+      }
+
+      this.$store.commit('addToCar', goodsinfo)
+      console.log(this.$store.state.car)
     },
     beforeEnter(el) {
       el.style.transform = "translate(0,0)"
@@ -100,14 +112,14 @@ export default {
       const Ydist = badgeposition.top - ballposition.top
 
       el.style.transform = `translate(${Xdist}px,${Ydist}px)`
-      el.style.transition = 'all 1s cubic-bezier(.4,-.3,1,.68)'
+      el.style.transition = 'all .7s cubic-bezier(.4,-.3,1,.68)'
       done()
     },
     afterEnter(el) {
       this.ballflag = !this.ballflag
     },
     getSelectedCount(count) {
-    	this.selectedCount = count
+      this.selectedCount = count
     }
   },
   components: {

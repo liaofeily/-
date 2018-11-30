@@ -2,7 +2,7 @@
   <div id="app">
 
     <!-- 顶部 Header 区域 -->
-    <mt-header fixed title="我爱我的宝宝">
+    <mt-header fixed title="我的项目首页">
       <div slot="left" v-show = "showf">
         <mt-button icon="back" @click="back">返回</mt-button>
       </div>
@@ -23,7 +23,7 @@
         <span class="mui-tab-label">会员</span>
       </router-link>
       <router-link class="mui-tab-itemx" to="/shopcar">
-        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">1</span></span>
+        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge" :class="$store.getters.getAllCount ===0 ? 'opacity' : ''">{{ $store.getters.getAllCount }}</span></span>
         <span class="mui-tab-label">购物车</span>
       </router-link>
       <router-link class="mui-tab-itemx" to="/search">
@@ -49,7 +49,7 @@ export default {
   },
   computed: {
     showf: function () {
-      if (this.$route.fullPath === "/home" || this.$route.fullPath === "/member" || this.$route.fullPath === "/shopcar" || this.$route.fullPath === "/search") {
+      if (this.$route.fullPath === "/home") {
         this.show = false
       } else {
         this.show = true
@@ -138,5 +138,7 @@ a:hover {
 .mint-button-icon {
   margin-right: 3px;
 }
-
+.opacity {
+  opacity: 0
+}
 </style>
